@@ -186,7 +186,15 @@ footer p{font-size:.78rem;color:#6f6d74}
 @media(max-width:560px){
   .pilares{grid-template-columns:1fr}
   .sec{padding:70px 0}
-  .hero-strip{gap:28px}
+  /* Hero mobile: conteúdo mais alto, faixa de stats vira bloco abaixo */
+  .hero{min-height:0;display:block}
+  .hero-inner{padding:118px 0 46px}
+  .hero h1{font-size:clamp(2.5rem,11.5vw,3.2rem);margin:20px 0 10px}
+  .hero p{font-size:.95rem;margin-bottom:28px}
+  .hero-ctas .btn{padding:13px 20px;font-size:.82rem}
+  .hero-strip{position:static;display:grid;grid-template-columns:1fr 1fr;gap:18px 12px;padding:24px 6%}
+  .hero-strip strong{font-size:1.15rem}
+  .hero-strip span{font-size:.6rem;letter-spacing:.16em}
 }
 </style>
 </head>
