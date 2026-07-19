@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+  --crm-bg: #f3f6f8;
+  --crm-surface: #ffffff;
+  --crm-surface-soft: #edf3f1;
+  --crm-text: #12212a;
+  --crm-muted: #61707c;
+  --crm-line: #d8e2e6;
+  --crm-accent: #0f766e;
+  --crm-accent-strong: #115e59;
+  --crm-success: #22c55e;
+  --crm-danger: #ef4444;
+  --crm-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 28%), linear-gradient(180deg, #f6f8fb 0%, #edf3f1 100%);
+  color: var(--crm-text);
+  font-family: "Inter", sans-serif;
+}
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+.crm-shell { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+.crm-sidebar { display: grid; grid-template-rows: auto 1fr auto; gap: 1.5rem; padding: 1.5rem; background: #0f1720; color: white; }
+.crm-brand { display: flex; align-items: center; gap: 1rem; }
+.crm-brand-mark { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 1rem; background: linear-gradient(135deg, #14b8a6, #0f766e); font-family: "Archivo", sans-serif; font-weight: 800; color: white; }
+.crm-brand strong { display: block; font-family: "Archivo", sans-serif; }
+.crm-brand span { color: rgba(255, 255, 255, 0.62); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; }
+.crm-nav, .crm-side-actions { display: grid; gap: 0.55rem; }
+.crm-nav button { display: flex; justify-content: space-between; align-items: center; min-height: 3rem; padding: 0 1rem; border: 0; border-radius: 1rem; background: transparent; color: rgba(255, 255, 255, 0.72); cursor: pointer; }
+.crm-nav button.is-active { background: linear-gradient(135deg, #14b8a6, #0f766e); color: white; }
+.crm-nav small { display: grid; place-items: center; min-width: 1.5rem; height: 1.5rem; padding: 0 0.35rem; border-radius: 999px; background: rgba(255, 255, 255, 0.16); }
+.crm-main { display: grid; grid-template-rows: auto 1fr; }
+.crm-topbar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: end; gap: 1rem; padding: 1.5rem 2rem 1.25rem; background: rgba(243, 246, 248, 0.88); border-bottom: 1px solid var(--crm-line); backdrop-filter: blur(12px); }
+.crm-topbar h1, .panel h2, .modal-head h2 { margin: 0; font-family: "Archivo", sans-serif; }
+.crm-topbar p { margin: 0.35rem 0 0; color: var(--crm-muted); }
+.crm-content { padding: 2rem; }
+.crm-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 2.8rem; padding: 0 1rem; border: 0; border-radius: 0.9rem; cursor: pointer; }
+.crm-btn-accent { background: linear-gradient(135deg, #14b8a6, #0f766e); color: white; }
+.crm-btn-success { background: var(--crm-success); color: white; }
+.crm-btn-danger { background: var(--crm-danger); color: white; }
+.crm-btn-ghost, .crm-btn-link { background: white; color: var(--crm-text); border: 1px solid var(--crm-line); }
+.kpi-grid, .panel-grid, .kanban-grid, .vehicle-grid { display: grid; gap: 1rem; }
+.kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.kpi-card, .panel, .kanban-column, .vehicle-card, .table-card, .agenda-card { border: 1px solid var(--crm-line); border-radius: 1.25rem; background: var(--crm-surface); box-shadow: var(--crm-shadow); }
+.kpi-card { padding: 1.25rem; }
+.kpi-card span, .kpi-card small, .panel-header span, .agenda-item span, .agenda-card span, .table-row span, .lead-card p, .vehicle-body p { color: var(--crm-muted); }
+.kpi-card strong, .vehicle-body h3 { display: block; margin: 0.55rem 0; font-family: "Archivo", sans-serif; font-size: 1.85rem; }
+.panel-grid { grid-template-columns: 1.2fr 1fr; margin-top: 1rem; }
+.panel { padding: 1.25rem; }
+.panel-header, .table-head, .modal-head, .modal-actions { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.funnel-list, .agenda-list, .table-list { display: grid; gap: 0.85rem; margin-top: 1rem; }
+.funnel-row { display: grid; grid-template-columns: 160px 1fr 36px; gap: 0.75rem; align-items: center; }
+.funnel-bar { overflow: hidden; height: 0.85rem; border-radius: 999px; background: var(--crm-surface-soft); }
+.funnel-fill { height: 100%; border-radius: inherit; }
+.agenda-item, .table-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; width: 100%; padding: 1rem; border: 0; border-radius: 1rem; background: var(--crm-surface-soft); text-align: left; cursor: pointer; }
+.agenda-item strong, .table-row strong, .lead-card strong, .vehicle-body strong, .agenda-body strong { display: block; }
+.agenda-item small, .agenda-card small { padding: 0.35rem 0.65rem; border-radius: 999px; background: #e6f6f5; color: var(--crm-accent-strong); }
+.agenda-item small.late, .agenda-card small.late { background: #fee2e2; color: #b91c1c; }
+.agenda-item small.today, .agenda-card small.today { background: #fef3c7; color: #b45309; }
+.toolbar { margin-bottom: 1rem; }
+.toolbar input { width: min(360px, 100%); min-height: 3rem; padding: 0 1rem; border: 1px solid var(--crm-line); border-radius: 1rem; background: white; }
+.toolbar.chips { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.toolbar.chips button { min-height: 2.75rem; padding: 0 1rem; border: 1px solid var(--crm-line); border-radius: 999px; background: white; cursor: pointer; }
+.toolbar.chips button.is-active { background: var(--crm-accent); border-color: var(--crm-accent); color: white; }
+.kanban-grid { grid-template-columns: repeat(6, minmax(260px, 1fr)); align-items: start; overflow-x: auto; }
+.kanban-column { padding: 1rem; min-height: 28rem; }
+.kanban-column header, .stage-head, .lead-card-footer, .lead-actions, .vehicle-actions, .modal-actions-right { display: flex; align-items: center; gap: 0.75rem; }
+.kanban-column header { justify-content: space-between; margin-bottom: 1rem; }
+.stage-dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; }
+.kanban-dropzone { display: grid; gap: 0.85rem; }
+.lead-card { padding: 1rem; border: 1px solid var(--crm-line); border-radius: 1rem; background: white; cursor: pointer; }
+.lead-card-footer { justify-content: space-between; margin-top: 0.9rem; }
+.lead-actions a, .vehicle-actions a { color: var(--crm-accent-strong); font-weight: 600; }
+.lead-actions small { padding: 0.3rem 0.6rem; border-radius: 999px; }
+.tag-site { background: #dbeafe; color: #1d4ed8; }
+.tag-whatsapp { background: #dcfce7; color: #15803d; }
+.tag-referral { background: #ede9fe; color: #6d28d9; }
+.tag-walkin { background: #fef3c7; color: #b45309; }
+.vehicle-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.vehicle-card { overflow: hidden; }
+.vehicle-visual { position: relative; min-height: 11rem; background: linear-gradient(135deg, rgba(15, 118, 110, 0.18), rgba(15, 118, 110, 0.04)), #dbe7e5; background-size: cover; background-position: center; }
+.vehicle-visual small, .status-pill { position: absolute; top: 1rem; padding: 0.3rem 0.65rem; border-radius: 999px; }
+.vehicle-visual small { right: 1rem; background: rgba(15, 23, 32, 0.78); color: white; }
+.status-pill { left: 1rem; color: white; }
+.status-disp { background: #16a34a; }
+.status-res { background: #f59e0b; }
+.status-vend { background: #475569; }
+.vehicle-body { padding: 1rem; }
+.vehicle-actions { margin-top: 1rem; }
+.vehicle-actions .crm-btn, .vehicle-actions a { flex: 1; }
+.pill-avaliando, .pill-aprovado, .pill-recusado { display: inline-flex; padding: 0.3rem 0.65rem; border-radius: 999px; font-size: 0.8rem; }
+.pill-avaliando { background: #fef3c7; color: #b45309; }
+.pill-aprovado { background: #dcfce7; color: #15803d; }
+.pill-recusado { background: #fee2e2; color: #b91c1c; }
+.agenda-board { display: grid; gap: 0.85rem; }
+.agenda-card { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center; padding: 1rem; }
+.agenda-card.is-done .agenda-body strong { text-decoration: line-through; }
+.agenda-body { cursor: pointer; }
+.check { width: 1.4rem; height: 1.4rem; border: 2px solid var(--crm-line); border-radius: 0.5rem; background: transparent; cursor: pointer; }
+.check.is-on { background: var(--crm-success); border-color: var(--crm-success); }
+.empty-state, .empty-note { display: grid; place-items: center; min-height: 8rem; border: 1px dashed var(--crm-line); border-radius: 1rem; color: var(--crm-muted); }
+.empty-state.wide { grid-column: 1 / -1; }
+.modal-backdrop { position: fixed; inset: 0; display: grid; place-items: center; padding: 1.5rem; background: rgba(15, 23, 32, 0.48); backdrop-filter: blur(6px); }
+.modal-card { width: min(680px, 100%); border-radius: 1.25rem; background: white; box-shadow: 0 30px 80px rgba(15, 23, 32, 0.24); }
+.modal-head, .modal-body, .modal-actions { padding: 1.25rem; }
+.modal-head, .modal-actions { border-bottom: 1px solid var(--crm-line); }
+.modal-actions { border-bottom: 0; border-top: 1px solid var(--crm-line); }
+.modal-body, .form-grid { display: grid; gap: 1rem; }
+.form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.modal-body label { display: grid; gap: 0.45rem; }
+.modal-body span { color: var(--crm-muted); font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.modal-body input, .modal-body select, .modal-body textarea { width: 100%; min-height: 2.9rem; padding: 0.8rem 0.9rem; border: 1px solid var(--crm-line); border-radius: 0.9rem; }
+.modal-body textarea { min-height: 7rem; resize: vertical; }
+.toast { position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%); padding: 0.9rem 1.2rem; border-radius: 999px; background: #0f1720; color: white; box-shadow: var(--crm-shadow); }
+@media (max-width: 1100px) {
+  .crm-shell { grid-template-columns: 1fr; }
+  .crm-sidebar { grid-template-rows: auto; }
+  .kpi-grid, .panel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .crm-topbar, .modal-actions, .modal-head, .table-row, .agenda-item { flex-direction: column; align-items: start; }
+  .crm-content, .crm-topbar { padding-inline: 1rem; }
+  .kpi-grid, .panel-grid, .form-grid { grid-template-columns: 1fr; }
+  .funnel-row { grid-template-columns: 1fr; }
+}
+
+/* ===== Login / Auth ===== */
+.crm-auth { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+.crm-auth-card { width: min(420px, 100%); display: grid; gap: 0.9rem; padding: 2rem; background: var(--crm-surface); border: 1px solid var(--crm-line); border-radius: 1.4rem; box-shadow: var(--crm-shadow); }
+.crm-auth-brand { margin-bottom: 0.5rem; }
+.crm-auth-card h1 { margin: 0; font-family: "Archivo", sans-serif; font-size: 1.5rem; }
+.crm-auth-sub { margin: 0 0 0.4rem; color: var(--crm-muted); }
+.crm-auth-card label { display: grid; gap: 0.45rem; }
+.crm-auth-card label span { font-size: 0.85rem; color: var(--crm-muted); }
+.crm-auth-card input { width: 100%; min-height: 2.9rem; padding: 0.8rem 0.9rem; border: 1px solid var(--crm-line); border-radius: 0.9rem; background: var(--crm-surface); color: var(--crm-text); }
+.crm-auth-card input:focus { outline: 2px solid var(--crm-accent); outline-offset: 1px; }
+.crm-auth-card button[type="submit"] { margin-top: 0.4rem; }
+.crm-auth-card button[disabled] { opacity: 0.6; cursor: default; }
+.crm-auth-error { margin: 0; color: var(--crm-danger); font-size: 0.9rem; }
+.crm-auth-warn { margin: 0; color: #b45309; font-size: 0.82rem; }
+.crm-auth-loading { margin: 0; color: var(--crm-muted); text-align: center; }
+.crm-sync-pill { display: inline-flex; align-items: center; padding: 0 0.75rem; height: 2rem; border-radius: 999px; background: var(--crm-surface-soft); color: var(--crm-muted); font-size: 0.8rem; }
