@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  --site-bg: #0a0d12;
+  --site-bg-soft: #121722;
+  --site-panel: rgba(18, 23, 34, 0.84);
+  --site-line: rgba(240, 220, 154, 0.16);
+  --site-gold: #d6b24d;
+  --site-gold-soft: #f4e3ae;
+  --site-text: #f5f1e6;
+  --site-muted: #a7a3b6;
+  --site-green: #25d366;
+  --site-red: #c0392b;
+  --site-display: "Anton", sans-serif;
+  --site-body: "Sora", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, rgba(214, 178, 77, 0.18), transparent 28%),
+    linear-gradient(180deg, #0a0d12 0%, #0f141d 100%);
+  color: var(--site-text);
+  font-family: var(--site-body);
+}
+a { color: inherit; text-decoration: none; }
+button, select, input { font: inherit; }
+.site-shell { min-height: 100vh; }
+.container { width: min(1180px, calc(100vw - 2rem)); margin: 0 auto; }
+.site-nav { position: fixed; inset: 0 0 auto; z-index: 20; padding: 1rem 0; transition: background-color 180ms ease, border-color 180ms ease; }
+.site-nav.is-solid { background: rgba(10, 13, 18, 0.84); border-bottom: 1px solid var(--site-line); backdrop-filter: blur(18px); }
+.nav-row, .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { display: grid; gap: 0.2rem; font-family: var(--site-display); letter-spacing: 0.06em; text-transform: uppercase; }
+.brand small { color: var(--site-muted); font-family: var(--site-body); font-size: 0.65rem; letter-spacing: 0.24em; }
+.nav-links { display: flex; gap: 1.5rem; color: var(--site-muted); text-transform: uppercase; font-size: 0.8rem; }
+.hero { position: relative; min-height: 100svh; display: grid; align-items: center; padding-top: 6rem; }
+.hero-backdrop {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(140deg, rgba(8, 10, 14, 0.94), rgba(8, 10, 14, 0.52)),
+    radial-gradient(circle at 85% 15%, rgba(214, 178, 77, 0.28), transparent 24%),
+    url("../img/toro-ranch.jpg") center/cover no-repeat;
+  filter: saturate(0.88);
+}
+.hero-content, .cta-inner { position: relative; z-index: 1; }
+.hero-content { padding: 4rem 0 8rem; }
+.kicker, .eyebrow {
+  display: inline-flex; align-items: center; gap: 0.75rem; color: var(--site-gold-soft);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+}
+.kicker::before, .eyebrow::before { content: ""; width: 2rem; height: 2px; background: var(--site-gold); }
+.eyebrow.center { justify-content: center; }
+.hero h1, .section h2, .cta h2 { margin: 1rem 0; font-family: var(--site-display); text-transform: uppercase; line-height: 0.94; letter-spacing: 0.02em; }
+.hero h1 { max-width: 10ch; font-size: clamp(3rem, 8vw, 6.4rem); }
+.hero h1 em, .cta h2 em { font-style: normal; color: var(--site-gold); }
+.hero p, .section-copy, .timeline-item p, .trade-card p, .cta p { max-width: 56ch; color: var(--site-muted); line-height: 1.7; }
+.hero-actions, .chip-row, .footer-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3rem; padding: 0 1.25rem; border: 0; border-radius: 0.9rem; font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary, .btn-gold { background: linear-gradient(135deg, var(--site-gold-soft), var(--site-gold)); color: #231a04; box-shadow: 0 12px 32px rgba(214, 178, 77, 0.24); }
+.btn-outline { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.22); color: var(--site-text); }
+.btn-whatsapp { background: var(--site-green); color: #082d18; }
+.btn-full { width: 100%; }
+.hero-strip {
+  position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  width: min(1180px, calc(100vw - 2rem)); margin: -3rem auto 0; padding: 1.25rem;
+  background: rgba(9, 12, 18, 0.78); border: 1px solid var(--site-line); border-radius: 1.2rem; backdrop-filter: blur(20px);
+}
+.hero-strip strong { display: block; color: var(--site-gold-soft); font-size: 1.1rem; }
+.hero-strip span { color: var(--site-muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.marquee { overflow: hidden; margin: 2rem 0 0; padding: 1rem 0; background: linear-gradient(135deg, var(--site-gold-soft), var(--site-gold)); color: #231a04; }
+.marquee-track { display: flex; gap: 2rem; width: max-content; animation: marquee 20s linear infinite; font-family: var(--site-display); text-transform: uppercase; letter-spacing: 0.08em; }
+.section { padding: 5.5rem 0; }
+.section-stock { background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.03)); }
+.pillar-grid, .car-grid { display: grid; gap: 1.25rem; margin-top: 2rem; }
+.pillar-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pillar-card, .car-card, .simulator, .trade-card {
+  border: 1px solid var(--site-line); border-radius: 1.35rem; background: var(--site-panel); backdrop-filter: blur(22px);
+}
+.pillar-card { padding: 1.6rem; }
+.pillar-card h3, .step h3, .timeline-item h3, .simulator h3 { margin: 0 0 0.5rem; }
+.car-grid { grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); }
+.car-card { overflow: hidden; }
+.car-photo { position: relative; aspect-ratio: 16 / 10; }
+.car-photo img { width: 100%; height: 100%; object-fit: cover; }
+.badge {
+  position: absolute; top: 1rem; left: 1rem; padding: 0.45rem 0.8rem; border-radius: 999px;
+  background: linear-gradient(135deg, var(--site-gold-soft), var(--site-gold)); color: #231a04;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+}
+.badge.is-alert { background: var(--site-red); color: white; }
+.car-body { display: grid; gap: 0.9rem; padding: 1.3rem; }
+.car-category { color: var(--site-gold); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.18em; }
+.car-body h3 { margin: 0; }
+.car-meta { color: var(--site-muted); font-size: 0.9rem; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag, .chip { border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 255, 255, 0.02); color: var(--site-muted); padding: 0.5rem 0.85rem; }
+.chip { cursor: pointer; }
+.chip.is-active { background: var(--site-gold); border-color: var(--site-gold); color: #231a04; }
+.car-footer { display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+.price-block small, .sim-result small { display: block; color: var(--site-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
+.price-block strong, .sim-result strong, .cta strong { font-family: var(--site-display); font-size: 1.8rem; letter-spacing: 0.03em; }
+.finance-grid, .trade-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 2rem; align-items: start; }
+.steps, .timeline { display: grid; gap: 1rem; margin-top: 2rem; }
+.step { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; align-items: start; }
+.step span {
+  display: grid; place-items: center; width: 3rem; height: 3rem; border: 1px solid var(--site-line);
+  border-radius: 1rem; color: var(--site-gold); font-family: var(--site-display);
+}
+.simulator, .trade-card { padding: 1.5rem; }
+.field { display: grid; gap: 0.65rem; margin-bottom: 1rem; }
+.field span { color: var(--site-muted); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.field select {
+  min-height: 3rem; border-radius: 0.9rem; border: 1px solid var(--site-line);
+  background: rgba(255, 255, 255, 0.04); color: var(--site-text); padding: 0 1rem;
+}
+.field input[type="range"] { accent-color: var(--site-gold); }
+.sim-result {
+  padding: 1.25rem; margin: 1.25rem 0; border-radius: 1rem; background: rgba(0, 0, 0, 0.22);
+  border: 1px solid var(--site-line); text-align: center;
+}
+.sim-result span, .helper { color: var(--site-muted); }
+.timeline { position: relative; padding-left: 1.2rem; }
+.timeline::before { content: ""; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 2px; background: var(--site-line); }
+.timeline-item { position: relative; padding-left: 1.25rem; }
+.timeline-item::before {
+  content: ""; position: absolute; left: -0.35rem; top: 0.35rem; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--site-gold);
+}
+.cta {
+  padding: 6rem 0; text-align: center;
+  background:
+    radial-gradient(circle at bottom center, rgba(214, 178, 77, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.08));
+}
+.cta p { margin-inline: auto; }
+.cta strong { display: block; margin: 1.25rem 0 1.5rem; }
+.site-footer { padding: 1.5rem 0 2rem; border-top: 1px solid var(--site-line); }
+.site-footer p, .site-footer a { color: var(--site-muted); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (max-width: 960px) {
+  .nav-links, .btn-primary { display: none; }
+  .pillar-grid, .hero-strip, .finance-grid, .trade-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .hero { min-height: auto; padding-bottom: 2rem; }
+  .hero-content { padding-bottom: 3rem; }
+  .hero-strip { margin-top: 1rem; }
+  .section { padding: 4rem 0; }
+}
+
+/* ===== Formularios de captura (leads/troca/contato) ===== */
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="email"],
+.field textarea {
+  min-height: 3rem; border-radius: 0.9rem; border: 1px solid var(--site-line);
+  background: rgba(255, 255, 255, 0.04); color: var(--site-text); padding: 0.85rem 1rem;
+  font-family: var(--site-body); width: 100%;
+}
+.field textarea { min-height: 5rem; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none; border-color: var(--site-gold);
+}
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.car-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; }
+.car-actions .btn { padding: 0 0.9rem; min-height: 2.6rem; }
+.contact-card {
+  max-width: 520px; margin: 0 auto 1.5rem; padding: 1.5rem; text-align: left;
+  border: 1px solid var(--site-line); border-radius: 1.35rem; background: var(--site-panel); backdrop-filter: blur(22px);
+}
+.form-feedback { margin: 0.75rem 0 0; font-size: 0.9rem; }
+.form-feedback.is-success { color: var(--site-green); }
+.form-feedback.is-error { color: var(--site-gold-soft); }
+.form-feedback.is-sending { color: var(--site-muted); }
+
+/* ===== Modal "Tenho interesse" ===== */
+.site-modal-backdrop {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 1.5rem;
+  background: rgba(4, 6, 10, 0.72); backdrop-filter: blur(6px);
+}
+.site-modal {
+  width: min(460px, 100%); padding: 1.75rem; border-radius: 1.35rem;
+  border: 1px solid var(--site-line); background: var(--site-bg-soft);
+}
+.site-modal-head { display: flex; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: 1.25rem; }
+.site-modal-head h3 { margin: 0.4rem 0 0.25rem; font-family: var(--site-display); text-transform: uppercase; }
+.site-modal-close {
+  background: transparent; border: 1px solid var(--site-line); color: var(--site-text);
+  width: 2.4rem; height: 2.4rem; border-radius: 0.8rem; cursor: pointer; flex-shrink: 0;
+}
+@media (max-width: 720px) {
+  .field-grid { grid-template-columns: 1fr; }
+}
