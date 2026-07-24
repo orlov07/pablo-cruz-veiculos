@@ -173,8 +173,8 @@ button, select, input { font: inherit; }
   .brand { font-size: 1rem; }
   .brand small { font-size: 0.56rem; letter-spacing: 0.16em; }
   .nav-row > .btn-primary { min-height: 2.55rem; padding: 0 0.75rem; font-size: 0.72rem; white-space: nowrap; }
-  .hero { min-height: auto; padding: 7.75rem 0 2rem; }
-  .hero-content { padding: 2rem 0 3rem; }
+  .hero { min-height: auto; padding: 6.75rem 0 2rem; }
+  .hero-content { padding: 1.5rem 0 3rem; }
   .hero h1 { font-size: clamp(3.25rem, 15vw, 4.5rem); }
   .hero-actions { display: grid; grid-template-columns: 1fr; max-width: 22rem; }
   .hero-actions .btn { width: 100%; }
