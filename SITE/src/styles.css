@@ -169,23 +169,53 @@ button, select, input { font: inherit; }
 }
 @media (max-width: 720px) {
   .container { width: min(100% - 2rem, 1180px); }
-  .site-nav { padding: 0.75rem 0; }
-  .brand { font-size: 1rem; }
-  .brand small { font-size: 0.56rem; letter-spacing: 0.16em; }
-  .nav-row > .btn-primary { min-height: 2.55rem; padding: 0 0.75rem; font-size: 0.72rem; white-space: nowrap; }
+  .site-nav { padding: calc(0.7rem + env(safe-area-inset-top)) 0 0.7rem; }
+  .nav-row { gap: 0.65rem; }
+  .brand { min-width: 0; font-size: 1rem; }
+  .brand small { max-width: 10.5rem; overflow: hidden; font-size: 0.56rem; letter-spacing: 0.14em; text-overflow: ellipsis; white-space: nowrap; }
+  .nav-row > .btn-primary { min-width: 6.1rem; min-height: 2.55rem; padding: 0 0.65rem; font-size: 0; white-space: nowrap; }
+  .nav-row > .btn-primary::after { content: "WhatsApp"; font-size: 0.7rem; }
   .hero { min-height: auto; padding: 6rem 0 2rem; }
   .hero-content { padding: 1.25rem 0 3rem; }
-  .hero h1 { font-size: clamp(3.25rem, 15vw, 4.5rem); }
+  .kicker, .eyebrow { gap: 0.55rem; font-size: 0.64rem; letter-spacing: 0.19em; }
+  .kicker::before, .eyebrow::before { width: 1.45rem; }
+  .hero h1 { max-width: 8ch; font-size: clamp(3.05rem, 15vw, 4.35rem); }
+  .hero p { line-height: 1.65; }
   .hero-actions { display: grid; grid-template-columns: 1fr; max-width: 22rem; }
   .hero-actions .btn { width: 100%; }
-  .hero-strip { margin-top: 1rem; }
+  .hero-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100% - 2rem, 1180px); margin-top: 1rem; padding: 0.35rem 1rem; }
+  .hero-strip > div { min-width: 0; padding: 0.8rem 0.55rem; }
+  .hero-strip > div:nth-child(2) { border-top: 0; }
+  .hero-strip > div:nth-child(n + 3) { border-top: 1px solid var(--site-line); }
+  .hero-strip strong { font-size: 1rem; }
+  .hero-strip span { font-size: 0.65rem; line-height: 1.35; }
   .marquee { margin-top: 1rem; }
-  .section h2 { max-width: 14ch; }
+  .section { padding: 3.75rem 0; scroll-margin-top: 5.5rem; }
+  .section h2 { max-width: 14ch; font-size: clamp(2.25rem, 11vw, 3.25rem); }
+  .section-copy { line-height: 1.65; }
+  .pillar-grid, .car-grid { gap: 1rem; margin-top: 1.5rem; }
+  .pillar-card { min-height: auto; padding: 1.3rem; }
+  .chip-row { flex-wrap: nowrap; margin-inline: -0.2rem; padding: 0.2rem; overflow-x: auto; scrollbar-width: none; }
+  .chip-row::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; }
   .car-grid { grid-template-columns: 1fr; }
+  .car-body { gap: 0.8rem; padding: 1.1rem; }
+  .car-body h3 { font-size: 1.1rem; }
   .car-footer { align-items: stretch; flex-direction: column; }
-  .car-actions { justify-content: stretch; }
-  .car-actions .btn { flex: 1; }
+  .car-actions { display: grid; grid-template-columns: 1fr; justify-content: stretch; }
+  .car-actions .btn { width: 100%; min-height: 2.85rem; }
+  .finance-grid, .trade-grid { gap: 1.5rem; }
+  .steps { margin-top: 1.5rem; }
+  .step { grid-template-columns: 2.65rem 1fr; gap: 0.8rem; }
+  .step span { width: 2.65rem; height: 2.65rem; }
+  .simulator, .trade-card { padding: 1.15rem; border-radius: 1.15rem; }
+  .sim-result { padding: 1rem; }
+  .sim-result strong { font-size: clamp(2rem, 10vw, 2.7rem); }
+  .cta { padding: 4rem 0; }
+  .contact-card { padding: 1.15rem; }
   .footer-row { align-items: flex-start; flex-direction: column; }
+  .site-modal-backdrop { align-items: end; padding: 0.75rem; }
+  .site-modal { max-height: calc(100svh - 1.5rem); overflow-y: auto; padding: 1.25rem; border-radius: 1.15rem; }
 }
 
 /* ===== Formularios de captura (leads/troca/contato) ===== */
