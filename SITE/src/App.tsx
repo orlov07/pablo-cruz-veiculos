@@ -744,7 +744,6 @@ export function SiteApp() {
       <footer className="site-footer">
         <div className="container footer-row">
           <p>© 2026 Pablo Cruz Veiculos</p>
-          <a href="/CRM/index.html">Abrir CRM</a>
         </div>
       </footer>
 
