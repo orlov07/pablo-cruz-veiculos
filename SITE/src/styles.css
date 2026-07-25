@@ -194,7 +194,7 @@ img { display: block; max-width: 100%; }
   .hero-strip span { font-size: 0.65rem; line-height: 1.35; }
   .marquee { margin-top: 1rem; }
   .section { padding: 3.75rem 0; scroll-margin-top: 5.5rem; }
-  .section-stock { padding-top: 2.25rem; }
+  .section-stock { padding-top: 1.25rem; }
   .section h2 { max-width: 14ch; font-size: clamp(2.25rem, 11vw, 3.25rem); }
   .section-copy { line-height: 1.65; }
   .pillar-grid, .car-grid { gap: 1rem; margin-top: 1.5rem; }
