@@ -124,6 +124,7 @@ img { display: block; max-width: 100%; }
 .price-block small, .sim-result small { display: block; color: var(--site-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
 .price-block strong, .sim-result strong, .cta strong { font-family: var(--site-display); font-size: 1.8rem; letter-spacing: 0.03em; }
 .finance-grid, .trade-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 2rem; align-items: start; }
+.finance-grid > *, .trade-grid > *, .simulator, .field, .field-grid { min-width: 0; }
 .steps, .timeline { display: grid; gap: 1rem; margin-top: 2rem; }
 .step { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; align-items: start; }
 .step span {
@@ -134,10 +135,10 @@ img { display: block; max-width: 100%; }
 .field { display: grid; gap: 0.65rem; margin-bottom: 1rem; }
 .field span { color: var(--site-muted); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.08em; }
 .field select {
-  min-height: 3rem; border-radius: 0.9rem; border: 1px solid var(--site-line);
+  width: 100%; min-width: 0; min-height: 3rem; border-radius: 0.9rem; border: 1px solid var(--site-line);
   background: rgba(255, 255, 255, 0.04); color: var(--site-text); padding: 0 1rem;
 }
-.field input[type="range"] { accent-color: var(--site-gold); }
+.field input[type="range"] { width: 100%; accent-color: var(--site-gold); }
 .sim-result {
   display: grid; justify-items: center; gap: 0.45rem; padding: 1.25rem; margin: 1.25rem 0; border-radius: 1rem;
   background: rgba(0, 0, 0, 0.22); border: 1px solid var(--site-line); text-align: center;
@@ -210,8 +211,11 @@ img { display: block; max-width: 100%; }
   .steps { margin-top: 1.5rem; }
   .step { grid-template-columns: 2.65rem 1fr; gap: 0.8rem; }
   .step span { width: 2.65rem; height: 2.65rem; }
-  .simulator, .trade-card { padding: 1.15rem; border-radius: 1.15rem; }
+  .simulator, .trade-card { width: 100%; padding: 1.15rem; border-radius: 1.15rem; }
+  .simulator { overflow: hidden; }
+  .simulator .field select { font-size: 0.82rem; text-overflow: ellipsis; }
   .sim-result { padding: 1rem; }
+  .sim-result span { max-width: 100%; overflow-wrap: anywhere; }
   .sim-result strong { font-size: clamp(2rem, 10vw, 2.7rem); }
   .cta { padding: 4rem 0; }
   .contact-card { padding: 1.15rem; }
