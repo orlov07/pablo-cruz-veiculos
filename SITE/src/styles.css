@@ -196,7 +196,7 @@ img { display: block; max-width: 100%; }
   .section { padding: 3.75rem 0; scroll-margin-top: 5.5rem; }
   .section-stock { padding-top: 0.75rem; padding-bottom: 2rem; }
   #financiamento { padding-top: 2rem; padding-bottom: 2rem; }
-  #troca { padding-top: 2rem; }
+  #troca { padding-top: 2rem; padding-bottom: 2rem; }
   .section h2 { max-width: 14ch; font-size: clamp(2.25rem, 11vw, 3.25rem); }
   .section-copy { line-height: 1.65; }
   .pillar-grid, .car-grid { gap: 1rem; margin-top: 1.5rem; }
@@ -220,7 +220,7 @@ img { display: block; max-width: 100%; }
   .sim-result { padding: 1rem; }
   .sim-result span { max-width: 100%; overflow-wrap: anywhere; }
   .sim-result strong { font-size: clamp(2rem, 10vw, 2.7rem); }
-  .cta { padding: 4rem 0; }
+  .cta { padding: 2rem 0 4rem; }
   .contact-card { padding: 1.15rem; }
   .footer-row { align-items: flex-start; flex-direction: column; }
   .site-modal-backdrop { align-items: end; padding: 0.75rem; }
